@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>El Titulo</title>
+  <title>Chin's Restaurant</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -27,9 +27,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand-md navbar-light"> 
     <div class="container">
-      <a href="#" class="navbar-brand">
-        <!--<img src="" alt="AdminLTE Logo" class="brand-image img-circle elevation-1" style="opacity: .9">-->
-        <span class="brand-text font-weight-light">Negocio Particular</span>
+      <a href="{% url 'home' %}" class="navbar-brand">
+        <img src="{% static 'img/chins/1681590479363~2.jpg' %}" alt="ChinsLogo" class="brand-image img-circle elevation-1" style="opacity: .9">
+        <span class="brand-text font-weight-light">Chin's Restaurant</span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,6 +44,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
             <li class="nav-item">
             <a href="#" class="nav-link">Men&uacute;</a>
+          </li>
+            <li class="nav-item">
+            <a href="#" class="nav-link">Contacto</a>
           </li>
         </ul>
       </div>
@@ -70,5 +73,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{% static 'AdminLTE/js/adminlte.min.js' %}"></script>
 
+<footer class="main-footer">
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">Chin's Restaurant Contacto / Contact</span>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                        Puede visitarnos en <a href="https://goo.gl/maps/H7j3oF4pYg38ByTb8" target="_blank">Calle 17 % 0 y 0A # 175 Rafael Freyre <i class="fa fa-map-marked"></i></a>
+                    <address>
+                        Contacta con nosotros a trav&eacute;s de los siguientes n&uacute;meros: +53 54231844 / +53 54199532<br>
+                        <h5>Sabemos como complacerte</h5><br>
+                    </address>
+                </div>
+                <div class="col-md-6" id="pionero">
+                    We are located at <a href="https://goo.gl/maps/H7j3oF4pYg38ByTb8" target="_blank">17 Street % 0 y 0A # 175 Rafael Freyre <i class="fa fa-map-marked"></i></a>
+                    <address>
+                        Contact us directly through the following numbers: +53 52743295 / +53 54719933<br>
+                        <h5>We know how to please you</h5> <br>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
