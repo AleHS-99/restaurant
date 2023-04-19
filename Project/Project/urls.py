@@ -19,5 +19,6 @@ from home.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',Home,name='home')
+    path('',Home,name='home'),
+    path('menu/',MenuPage.as_view(),name='menu')
 ]
