@@ -2,6 +2,184 @@
 {% load static %}
 
 {% block body %}
+    <style>
 
+    .carousel-item img {
+      max-width: 100%;
+      max-height: 665px;
+      object-fit: cover;
+    }
+    .imagen{
+        max-width: 100%;
+        max-height: 350px;
+        object-fit: cover;
+    }
+    .carousel-indicators li {
+        background-color: transparent;
+        color: transparent;
+        border: none;
+    }
+    .card-container {
+      width: 300px;
+      height: 300px;
+      perspective: 1000px;
+    }
 
+    .card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      transition: transform 0.6s;
+    }
+
+    .card-front {
+      transform: rotateY(0deg);
+    }
+
+    .card-back {
+      transform: rotateY(-180deg);
+    }
+    .card-back img{
+        height: 300px;
+    }
+
+    .card-container:hover .card-front {
+      transform: rotateY(180deg);
+    }
+
+    .card-container:hover .card-back {
+      transform: rotateY(0deg);
+    }
+    .expanding-link {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      transition: transform 0.3s ease-out;
+    }
+
+    .expanding-link:hover {
+      transform: scale(1.2);
+      z-index: 1;
+        border: 2px solid #007bff;
+        border-radius: 10px;
+    }
+
+    .expanding-link::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.3);
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+      z-index: -1;
+    }
+
+    .expanding-link:hover::before {
+      opacity: 1;
+    }
+    </style>
+    <div class="container-fluid">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'img/chins/1681590479363~2.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'img/chins/1681590558835.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'img/chins/1681590542814.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            <div class="carousel-caption d-none d-md-block">
+                <h1 class="text-center">Chin's Restaurant</h1>
+                <h5 class="text-center">Sabemos Como Complacerte</h5>
+            </div>
+          </div>
+        <br>
+        <div class="container">
+        <!-- Contenido de la página aquí -->
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 d-flex align-items-center">
+                  <div class="text-container">
+                    <h2>Sobre el personal del restaurante</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula, sapien vel lacinia pellentesque, velit enim euismod quam, in eleifend enim nisl quis lacus. Etiam euismod, magna vel consequat fringilla, eros arcu laoreet libero, a euismod sapien augue ac dolor.</p>
+                  </div>
+                </div>
+                <div class="col-md-6 d-flex align-items-center">
+                  <img src="{% static 'img/chins/1681590558835.jpg' %}" alt="Foto del personal" class="img-fluid w-100 mx-auto d-block imagen" style="object-position: center;">
+                </div>
+              </div>
+                <br>
+                <div class="row text-center">
+                    <div class="col-md-4 d-flex justify-content-center">
+                      <div class="card-container">
+                          <div class="card card-front">
+                            <div class="card-body">
+                              <h5 class="card-title">Nombre del plato</h5>
+                              <p class="card-text">Descripción del plato</p>
+                            </div>
+                          </div>
+                          <div class="card card-back">
+                            <img src="{% static 'img/chins/1681590558835.jpg' %}" alt="Foto del plato" class="card-img-top">
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center">
+                      <div class="card-container">
+                          <div class="card card-front">
+                            <div class="card-body">
+                              <h5 class="card-title">Nombre del plato</h5>
+                              <p class="card-text">Descripción del plato</p>
+                            </div>
+                          </div>
+                          <div class="card card-back">
+                            <img src="{% static 'img/chins/1681590558835.jpg' %}" alt="Foto del plato" class="card-img-top">
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center">
+                      <div class="card-container">
+                          <div class="card card-front">
+                            <div class="card-body">
+                              <h5 class="card-title">Nombre del plato</h5>
+                              <p class="card-text">Descripción del plato</p>
+                            </div>
+                          </div>
+                          <div class="card card-back">
+                            <img src="{% static 'img/chins/1681590558835.jpg' %}" alt="Foto del plato" class="card-img-top">
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                <br>
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <a href="#" style="font-size: 18px;" class="expanding-link text-secondary text-decoration-none">
+                         <i style="color: #007bff;" class="fas fa-utensils"></i> Descubre Nuestro Men&uacute; <i style="color: #007bff;" class="fas fa-utensils"></i>
+                      </a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <br>
 {% endblock %}
