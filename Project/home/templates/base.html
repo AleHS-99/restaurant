@@ -26,13 +26,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <style>
 .navbar{
     min-height: 80px;
-    background-color: #f8f9fa;
+
     }
 .navbar-brand {
   display: flex;
   align-items: center;
   font-family: 'Pacifico', cursive;
   font-size: 28px;
+
 }
 
 .navbar-brand img {
@@ -57,9 +58,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
   <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+  <div style="background-color: #f8f9fa;" class="container-fluid">
     <a class="navbar-brand" href="{% url 'home' %}">
-      <img src="{% static 'img/chins/1681590479363~2.jpg' %}" alt="Chin's Restaurant Logo" width="50" height="50" class="d-inline-block align-text-top me-2">
+      <img src="{% static 'img/chins/logo.jpg' %}" alt="Chin's Restaurant Logo" width="70" height="70" class="d-inline-block align-text-top me-2">
       <span class="fs-4">Chin's Restaurant</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
