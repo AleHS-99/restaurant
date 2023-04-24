@@ -12,8 +12,8 @@ class modalidad(models.Model):
 
 class oferta(models.Model):
     class Meta:
-        verbose_name = "Ingrediente"
-        verbose_name_plural = "Ingredientes"
+        verbose_name = "Plsatos y Bevidas"
+        verbose_name_plural = "Platos y Bevidas"
     codigo = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=200)
     foto = models.ImageField(upload_to='items',null=True,blank=True)

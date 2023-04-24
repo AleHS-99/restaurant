@@ -3,16 +3,46 @@
 
 {% block body %}
 <style>
-
-
+.title-menu{
+    font-family: 'Pacifico', cursive;
+}
 </style>
     <div class="container-fluid">
         <div class="container my-5">
-            <h1 class="text-center display-4">Nuestro Menú</h1>
+            <h1 class="text-center display-4 title-menu">Nuestro Menú</h1>
         </div>
 
   <!-- Sección de platos -->
-
-
+    <div class="container">
+        {% for m in modal %}
+            <div id="{{ m.2 }}" class="row">
+            <h3 class="text-center" style="background-color: #aca6a6">{{ m.1 }}</h3>
+        {% for c in object_list %}
+            {% if c.moda.codigo == m.0 %}
+                <div style="margin-top: 5%" class="col-md-6 d-flex justify-content-center"> <!-- Agregar la clase "d-flex justify-content-center" -->
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if c.foto %}
+                                    <img src="{{ c.foto.url }}" alt="{{ c.nombre }}" class="img-fluid rounded-start">
+                                {% else %}
+                                    <img src="{% static 'img/chins/logo.jpg' %}" alt="{{ c.nombre }}" class="img-fluid rounded-start">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ c.nombre }}</h4>
+                                    <h5><small class="precio"><i><strong>Precio:</strong> {{ c.precio}} CUP</i></small></h5>
+                                    <p>{% if c.ingredientes %}{{ c.ingredientes }}{% endif %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endfor %}
+    </div>
     </div>
 {% endblock %}
