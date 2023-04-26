@@ -37,15 +37,20 @@
 
     .card-front {
       transform: rotateY(0deg);
+      
     }
 
     .card-back {
       transform: rotateY(-180deg);
+      
     }
     .card-back img{
         height: 320px;
     }
-
+    
+    .card-front img{
+        height: 320px;
+    }
     .card-container:hover .card-front {
       transform: rotateY(180deg);
     }
@@ -131,7 +136,7 @@
         <div class="container">
         <!-- Contenido de la página aquí -->
             <div class="container">
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-md-6 d-flex align-items-center">
                   <div class="text-container">
                     <h2>Sobre el Restaurante</h2>
@@ -146,45 +151,51 @@
                 </div>
                 <div class="col-md-6 d-flex align-items-center">
                   <img src="{% static 'img/chins/artwork.png' %}" alt="Foto del personal" class="img-fluid w-100 mx-auto d-block imagen" style="object-position: center;">
-                </div>
-              </div>
+                </div> 
+              </div>-->
                 <div class="row text-center">
+                  <h2>Sugerencias del Chef</h2>
                     <div style="margin-top: 5%" class="col-md-4 d-flex justify-content-center">
                       <div class="card-container">
                           <div class="card card-front">
+                            <img src="{% static 'img/chins/20230402_214824.jpg' %}" alt="Foto del plato" class="card-img-top">
+                          </div>
+                          <div class="card card-back">
                             <div class="card-body">
                               <h4 class="card-title">Roca Chin's</h4>
                               <p class="card-text">El plato Roca Chin's con sabor del mar es una deliciosa combinación
                                   de carne de cerdo, pollo, camarones y pescado estilizados, todo en un solo plato.
                                   Cada bocado ofrece una explosión de sabores del mar.</p>
-                                 <h5>¡Disfruta de este plato único y delicioso en
-                                nuestro restaurante!</h5>
-                            </div>
-                          </div>
-                          <div class="card card-back">
-                            <img src="{% static 'img/chins/20230402_214824.jpg' %}" alt="Foto del plato" class="card-img-top">
+                              <h5>¡Disfruta de este plato único y delicioso en 
+                              nuestro restaurante!</h5>
+                            </div>                            
                           </div>
                       </div>
                     </div>
                     <div style="margin-top: 5%" class="col-md-4 d-flex justify-content-center">
                       <div class="card-container">
                           <div class="card card-front">
+                            <img src="{% static 'img/chins/20230406_194630.jpg' %}" alt="Foto del plato" class="card-img-top">
+                          </div>
+                          <div class="card card-back">
                             <div class="card-body">
                               <h4 class="card-title">Chimeneas aromatizadas con mojo criollo al carbón</h4>
                               <p class="card-text">Las Chimeneas aromatizadas con mojo criollo al carbón son una
                                   deliciosa opción para aquellos que disfrutan del sabor ahumado y característico
                                   de la carne cocida a la parrilla.</p>
                                 <h6>¡Ven a nuestro restaurante y prueba este plato lleno de sabor y personalidad!</h6>
-                            </div>
-                          </div>
-                          <div class="card card-back">
-                            <img src="{% static 'img/chins/20230406_194630.jpg' %}" alt="Foto del plato" class="card-img-top">
+                            </div>                            
                           </div>
                       </div>
                     </div>
+                    
                     <div style="margin-top: 5%" class="col-md-4 d-flex justify-content-center">
+                      
                       <div class="card-container">
                           <div class="card card-front">
+                            <img src="{% static 'img/chins/plato1.jpg' %}" alt="Foto del plato" class="card-img-top">
+                          </div>
+                          <div class="card card-back">
                             <div class="card-body">
                               <h4 class="card-title">Popurrí Chin's</h4>
                               <p class="card-text">El postre Popurrí Chin's es un dulce y delicioso final para cualquier
@@ -193,10 +204,64 @@
                                   no te puedes perder. </p>
                                 <h5>¡Ven a nuestro restaurante y disfruta del exquisito sabor del
                                   Popurrí Chin's!</h5>
-                            </div>
+                            </div>                            
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                <br>
+                <div class="row text-center">
+                  <h2>Bebidas más populares</h2>
+                    <div style="margin-top: 5%" class="col-md-4 d-flex justify-content-center">
+                      <div class="card-container">
+                          <div class="card card-front">
+                            <img src="{% static 'img/chins/20230402_214824.jpg' %}" alt="Foto del plato" class="card-img-top">
                           </div>
                           <div class="card card-back">
+                            <div class="card-body">
+                              <h4 class="card-title">Roca Chin's</h4>
+                              <p class="card-text">El plato Roca Chin's con sabor del mar es una deliciosa combinación
+                                  de carne de cerdo, pollo, camarones y pescado estilizados, todo en un solo plato.
+                                  Cada bocado ofrece una explosión de sabores del mar.</p>
+                              <h5>¡Disfruta de este plato único y delicioso en 
+                              nuestro restaurante!</h5>
+                            </div>                            
+                          </div>
+                      </div>
+                    </div>
+                    <div style="margin-top: 5%" class="col-md-4 d-flex justify-content-center">
+                      <div class="card-container">
+                          <div class="card card-front">
+                            <img src="{% static 'img/chins/20230406_194630.jpg' %}" alt="Foto del plato" class="card-img-top">
+                          </div>
+                          <div class="card card-back">
+                            <div class="card-body">
+                              <h4 class="card-title">Chimeneas aromatizadas con mojo criollo al carbón</h4>
+                              <p class="card-text">Las Chimeneas aromatizadas con mojo criollo al carbón son una
+                                  deliciosa opción para aquellos que disfrutan del sabor ahumado y característico
+                                  de la carne cocida a la parrilla.</p>
+                                <h6>¡Ven a nuestro restaurante y prueba este plato lleno de sabor y personalidad!</h6>
+                            </div>                            
+                          </div>
+                      </div>
+                    </div>
+                    
+                    <div style="margin-top: 5%" class="col-md-4 d-flex justify-content-center">
+                      
+                      <div class="card-container">
+                          <div class="card card-front">
                             <img src="{% static 'img/chins/plato1.jpg' %}" alt="Foto del plato" class="card-img-top">
+                          </div>
+                          <div class="card card-back">
+                            <div class="card-body">
+                              <h4 class="card-title">Popurrí Chin's</h4>
+                              <p class="card-text">El postre Popurrí Chin's es un dulce y delicioso final para cualquier
+                                  comida. Este postre es una combinación de sabores y texturas que deleitan el paladar.
+                                  Este postre es una deliciosa sorpresa que
+                                  no te puedes perder. </p>
+                                <h5>¡Ven a nuestro restaurante y disfruta del exquisito sabor del
+                                  Popurrí Chin's!</h5>
+                            </div>                            
                           </div>
                       </div>
                     </div>
