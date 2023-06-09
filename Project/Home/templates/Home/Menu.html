@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        html{
+            background-image: url({% static 'img/Leonardo_Diffusion_a_realistick_pitchure_of_a_varius_cuban_foo_1.jpg' %});
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: "Cabin Sketch", cursive;
+        }
+        body{
+            background-color: rgba(75, 74, 74, 0.6);
+        }
+    h1{
+        color: #B5986C;
+    }
+    h3{
+        color: white;
+    }
+    .bg-gray2{
+        background-color: rgba(68, 67, 67, 0.86);
+}
+    </style>
+    <div class="Home">
+        <div class="Home2">
+            <div class="container">
+                <div class="row">
+                    <div class="text-light py-5">
+                        <h1 class="text-center">Nuestro Men&uacute;</h1>
+                    </div>
+                    {% for m in modal %}
+                    <div id="{{ m.2 }}" class="row" style="border: 2px solid #B5986C;">
+                    &nbsp;
+                    <h3 class="text-center" >{{ m.1 }}</h3>
+                    {% for c in object_list %}
+                        {% if c.moda.codigo == m.0 %}
+                            <div style="margin-top: 5%" class="col-md-6 d-flex justify-content-center"> <!-- Agregar la clase "d-flex justify-content-center" -->
+                                <div class="card mb-3 bg-gray2 text-light" style="max-width: 540px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            {% if c.foto %}
+                                                <img src="{{ c.foto.url }}" alt="{{ c.nombre }}" class="img-fluid w-100">
+                                            {% else %}
+                                                <img src="{% static 'img/logo.jpg' %}" alt="{{ c.nombre }}" class="img-fluid w-100">
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body bg-gray2">
+                                                <h5 class="card-title" style="color: #B5986C;">{{ c.nombre }}</h5>
+                                                <p>{% if c.ingredientes %}{{ c.ingredientes }}{% endif %}</p>
+                                                <h6 class="float-end"><strong>Precio:</strong> {{ c.precio}} CUP</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

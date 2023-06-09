@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+.container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+.container h1, h2{
+     color: #B5986C;
+}
+.card-container {
+      width: 320px;
+      height: 320px;
+      perspective: 1000px;
+
+    }
+.card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      transition: transform 0.6s;
+        background-color: #505c68;
+        color: white;
+
+    }
+.card-front {
+      transform: rotateY(0deg);
+
+    }
+.card-back {
+      transform: rotateY(-180deg);
+
+    }
+.card-back img{
+        height: 320px;
+    }
+.card-front img{
+        height: 320px;
+    }
+.card-container:hover .card-front {
+      transform: rotateY(180deg);
+    }
+.card-container:hover .card-back {
+      transform: rotateY(0deg);
+    }
+.Home{
+    background-image: url({% static 'img/Leonardo_Diffusion_a_realistick_pitchure_of_a_varius_cuban_foo_1.jpg' %});
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Cabin Sketch", cursive;
+
+}
+.Home2{
+    background-color: rgba(75, 74, 74, 0.6);
+}
+.bg-gray2{
+    background-color: rgba(68, 67, 67, 0.86);
+}
+@media screen and (min-width: 768px) { /* tamaño típico de pantalla de PC */
+  .carousel-inner {
+    height: 70vh;
+  }
+}
+</style>
+
+    <div class="Home">
+        <div class="Home2">
+            <div class="Home">
+            <section class="text-light py-5 Home2">
+                <div class="container2">
+                    <div class="row align-items-center justify-content-center cuadro">
+                        <div class="col-md-8 text-center">
+                            <h1 class="display-4 mb-4">Chin's Restaurant</h1>
+                            <p class="lead mb-5">
+                                Nuestro menú ofrece una gran variedad de platos únicos, que combinan los sabores y
+                                aromas más auténticos de la cocina cubana. En Chin's, nos enorgullece ofrecer una experiencia
+                                gastronómica inolvidable, desde nuestros platos clásicos como el Ropa Vieja hasta nuestras deliciosas
+                                especialidades de parrilla acompañados de nuestro mojo criollo.
+                                Ven y disfruta de la auténtica comida cubana en un ambiente acogedor y familiar, ¡te esperamos en Chin's!
+                            </p>
+                            <a href="{% url 'about' %}" class="btn btn-primary btn-lg" style="background-color: #B5986C; border-color: #B5986C;">Descubre nuestro men&uacute;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                </div>
+            <div class="container">
+                <section class="text-light py-5 bg-gray2">
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col-md-8 text-center ">
+                        <h2 class="display-4 mb-4">Nuestros Platos Principales</h2>
+                        <center><div class="divider" style="height: 2px; background-color: #B5986C;"></div></center>
+                          <div class="row text-center">
+                                <div style="margin-top: 5%" class="col-md-4 d-flex justify-content-center">
+                                  <div class="card-container">
+                                      <div class="card card-front">
+                                        <img src="{% static 'img/20230402_214824.jpg' %}" alt="Foto del plato" class="card-img-top">
+                                      </div>
+                                      <div class="card card-back">
+                                        <div class="card-body">
+                                          <h4 class="card-title">Roca Chin's</h4>
+                                          <p class="card-text">El plato Roca Chin's con sabor del mar es una deliciosa combinación
+                                              de carne de cerdo, pollo, camarones y pescado estilizados, todo en un solo plato.
+                                              Cada bocado ofrece una explosión de sabores del mar.</p>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div style="margin-top: 5%" class="col-md-4 d-flex justify-content-center">
+                                  <div class="card-container">
+                                      <div class="card card-front">
+                                          <video autoplay muted loop width="100%" height="100%">>
+                                              <source src="{% static 'vid/VID-20230518-WA0141.mp4' %}" type="video/mp4">
+                                              Tu navegador no admite la etiqueta de video.
+                                          </video>
+                                      </div>
+                                      <div class="card card-back">
+                                        <div class="card-body">
+                                          <h4 class="card-title">Chimeneas aromatizadas con mojo criollo al carbón</h4>
+                                          <p class="card-text">Las Chimeneas aromatizadas con mojo criollo al carbón son una
+                                              deliciosa opción para aquellos que disfrutan del sabor ahumado y característico
+                                              de la carne cocida a la parrilla.</p>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </div>
+
+                        <div style="margin-top: 5%" class="col-md-4 d-flex justify-content-center">
+
+                          <div class="card-container">
+                              <div class="card card-front">
+                                <img src="{% static 'img/plato1.jpg' %}" alt="Foto del plato" class="card-img-top">
+                              </div>
+                              <div class="card card-back">
+                                <div class="card-body">
+                                  <h4 class="card-title">Popurrí Chin's</h4>
+                                  <p class="card-text">El postre Popurrí Chin's es un dulce y delicioso final para cualquier
+                                      comida. Este postre es una combinación de sabores y texturas que deleitan el paladar.
+                                      Este postre es una deliciosa sorpresa que
+                                      no te puedes perder. </p>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                          <br>
+                          <a href="{% url 'about' %}" style="color: #B5986C; font-size: 1.5rem;">Descubre m&aacute;s sobre nuestro men&uacute;</a>
+                      </div>
+                    </div>
+                </section>
+                <div class="divider" style="height: 2px; background-color: #B5986C;"></div>
+                <section class="text-light py-5 bg-gray2">
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col-md-8 text-center ">
+                        <h2 class="display-4 mb-4">Servicios</h2>
+                          <center><div class="divider" style="height: 2px; background-color: #B5986C; width: 50%"></div></center><br>
+                          <p>Descripcion de los platos de forma general jdnahsgbasbasbvsbvsvsvbafbvvbavbfvhbfahvbadvbhfbvbvfbfvv
+                          asdjkgasbsafbasfv</p>
+                      </div>
+                    </div>
+                </section>
+                <div class="divider" style="height: 2px; background-color: #B5986C;"></div>
+                <section class="text-light px-5 bg-gray2" id="about" >
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col-md-8 text-center ">
+                        <h2 class="display-4 mb-4">¿Quienes somos?</h2>
+                          <center><div class="divider" style="height: 2px; background-color: #B5986C; width: 50%"></div></center><br>
+                      </div>
+                    </div>
+                    <div class="card2">
+                        <div class="card-header">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                  <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                  </div>
+                                  <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                      <img src="{% static 'img/personal0.jpg' %}" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                      <img src="{% static 'img/IMG-20230518-WA0157.jpg' %}" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                      <img src="{% static 'img/IMG-20230518-WA0151.jpg' %}" class="d-block w-100" alt="...">
+                                    </div>
+                                  </div>
+                                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                  </button>
+                                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                  </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <br>
+                                    <h2 class="card-title text-center" style="color: #B5986C;">Equipo:</h2>
+                                    <br>
+                                    <p class="card-text text-center">
+                                        Nuestro restaurante se enorgullece de contar con un equipo altamente capacitado
+                                        y apasionado por la gastronomía cubana. Cada uno de nuestros miembros del equipo
+                                        es una pieza clave en la creación de nuestra deliciosa comida y en brindar una
+                                        experiencia inolvidable a nuestros clientes.<br>
+                                        En Chin's Restaurant, creemos que nuestro equipo de trabajo es una parte
+                                        fundamental de nuestra identidad y de lo que hace que nuestro restaurante sea
+                                        especial. Cada miembro del equipo está comprometido en brindar una experiencia
+                                        gastronómica auténtica y de primera calidad a nuestros clientes.
+                                        <br><h5 class="text-center">¡Esperamos verlos pronto en nuestro restaurante!</h5>
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h2 class="card-title text-center" style="color: #B5986C;">Ubicación y horario:</h2><br>
+                                    <h4 class="card-text text-center"><img src="{% static 'img/Location_50px.png' %}" style="height: 20px"> <small>Calle 17 &0 y 0A #175 Rafael Freyre</small> <img src="{% static 'img/Location_50px.png' %}" style="height: 20px"> </h4>
+                                    <br><h4 class="card-text text-center">Información de contacto:</h4><br>
+                                    <p class="card-text text-center"><img src="{% static 'img/phone_50px.png' %}" style="height: 20px"> +53 54231844 &oacute; +53 54199532</p>
+                                    <h4 class="card-text text-center"><img src="{% static 'img/alarm_clock_50px.png' %}" style="height: 20px"> <small> De Lunes a Jueves: 11:00am - 11:00pm</small> <img src="{% static 'img/alarm_clock_50px.png' %}" style="height: 20px"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

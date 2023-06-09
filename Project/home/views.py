@@ -1,14 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
 
 from .models import *
 # Create your views here.
 def Home(request):
-    return render(request,'index.html')
+    return render(request, 'Home/index.html')
 
 class MenuPage(ListView):
     model = oferta
-    template_name = 'Menu.html'
+    template_name = 'Home/Menu.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
